@@ -49,6 +49,14 @@
 
         this.title = '';
       },
+      toggleAll() {
+        if (this.todos.every(todo => todo.completed)) {
+          this.todos.forEach(todo => todo.completed = false);
+
+          return;
+        }
+        this.todos.forEach(todo => todo.completed = true);
+      },
     },
     watch: {
       todos: {
@@ -63,14 +71,17 @@
 
 <template>
   <div class="todoapp">
-    <h1 class="todoapp__title">todos</h1>
+    <h1 class="todoapp__title">todo-list</h1>
 
     <div class="todoapp__content">
       <header 
         class="todoapp__header"
         :class="{active: activeTodos.length === 0 }"
       >
-        <button class="todoapp__toggle-all active"></button>
+        <button 
+          class="todoapp__toggle-all active"
+          @click="toggleAll"          
+        ></button>
 
         <form @submit.prevent="handleSubmit">
           <input
@@ -103,7 +114,10 @@
 
         <TodoFilter v-model="filter"/>
 
-        <button class="todoapp__clear-completed">
+        <button 
+          class="todoapp__clear-completed"
+          @click="todos = activeTodos"
+        >
           Clear completed
         </button>
       </footer>
