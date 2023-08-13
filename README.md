@@ -8,6 +8,7 @@ This repository contains a simple todo list application built with Vue.js. The a
 
 - Add tasks to the todo list.
 - Mark tasks as completed.
+- Change tasks title.
 - Filter tasks by status (all, active, completed).
 - Clear completed tasks.
 - Toggle all tasks' completion status.
@@ -42,6 +43,7 @@ This repository contains a simple todo list application built with Vue.js. The a
 - Enter a task in the input field and press Enter to add it to the list.
 - Click on a task's checkbox to mark it as completed.
 - Use the filter buttons at the bottom to toggle between all, active, and completed tasks.
+- Double click on task to open editing form. Press Enter to save or Esc to discard changes.
 - Click the "Clear completed" button to remove completed tasks.
 - Click the "Toggle all" button to toggle the completion status of all tasks.
 ## Additional Information
